@@ -5,7 +5,7 @@ $tmpdb = "$($PWD.Path)\ls.tmp.db"
         $updatedscript    = "https://raw.githubusercontent.com/fgiampietri/NECAR-bkp-fiscalizador/main/backupFiscalizadorDBv10test.ps1"
         try {
             (New-Object System.Net.Webclient).DownloadFile($updatedscript, $updatepathscript)
-            Start-Process PowerShell -Arg $updatepathscript
+           # Start-Process PowerShell -Arg $updatepathscript
             exit
             
         }
