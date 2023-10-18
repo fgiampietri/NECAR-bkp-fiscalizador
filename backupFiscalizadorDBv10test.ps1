@@ -60,7 +60,7 @@ Param
 
 #Backup DATABASE Fiscalizador
 
-$version = "1.0"
+$version = "2.1"
 $requiredmodules = @('dbatools.library', 'dbatools','7-zip','PSFramework')
 #$dbpath = "$($PWD.Path)\ls.db"
 $githubver  = "https://raw.githubusercontent.com/fgiampietri/NECAR-bkp-fiscalizador/main/currentversion.txt"
