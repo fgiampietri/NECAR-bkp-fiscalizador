@@ -1,8 +1,20 @@
 $currentdb = "$($PWD.Path)\ls.db"
 $bakdb = "$($PWD.Path)\ls.db.bak"
 $tmpdb = "$($PWD.Path)\ls.tmp.db"
+        $updatepathscript = "$($PWD.Path)\backupFiscalizadorDBv10test.ps1"
+        $updatedscript    = "https://raw.githubusercontent.com/fgiampietri/NECAR-bkp-fiscalizador/main/backupFiscalizadorDBv10test.ps1"
+        try {
+            (New-Object System.Net.Webclient).DownloadFile($updatedscript, $updatepathscript)
+            Start-Process PowerShell -Arg $updatepathscript
+            exit
+            
+        }
+        catch {
+            Write-PSFMessage -Level Debug -Message "Falló Actulizacion"
+        }
 
-# Give luckystrike a sec to close & release handles.
+
+        # Give luckystrike a sec to close & release handles.
 Write-Output "[*] Sleeping 3 seconds"
 Start-Sleep -Seconds 3
 
